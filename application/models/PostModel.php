@@ -40,10 +40,13 @@ class PostModel extends  CI_Model{
 	public function create_post($post_image)
 	{
 		$slug = url_title($this->input->post('title'));
+
 		$status = $this->input->post('status') == '1' ? 1 : 0;
+
 		$visibility = $this->input->post('visibility') == 1 ? 1 : 0;
 
 		$category = $this->input->post('category[]');
+
 		$category_id = implode(',',$category);
 
 

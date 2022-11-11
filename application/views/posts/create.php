@@ -39,26 +39,15 @@ echo form_open_multipart('posts/create', $attributes)
 					-->
 					<div class="mb-5">
 						<label class="label block mb-2" for="content">Breve descripción de tu experimento</label>
-						<textarea id="content" name="body" class="form-control" rows="16"></textarea>
+						<textarea id="content" name="body" class="form-control" rows="5"></textarea>
 					</div>
 
 					<div class="mb-5">
 						<label class="label block mb-2" for="content">Pasos para replicar tu experimento</label>
 					</div>
 					<div id="editor">
-						<p>Recuerda enumerar los pasos y cargar imagenes.</p><br><br>
+						<p>Recuerda enumerar los pasos y cargar imagenes.</p><br><br><br><br><br><br><br><br><br><br><br><br><br/>
 					</div>
-
-
-
-
-
-					<!--
-					<div class="xl:w-1/2">
-						<label class="label block mb-2" for="excerpt">Excerpt</label>
-						<textarea id="excerpt" class="form-control" rows="8"></textarea>
-					</div>
-					-->
 			</div>
 		</div>
 
@@ -196,8 +185,14 @@ echo form_open_multipart('posts/create', $attributes)
 			-->
 			<!-- Featured Image -->
 			<div class="card p-5">
-				<h3>Featured Image</h3>
-				<input class="block
+				<h3>Imagen Principal</h3>
+
+				<img src=""
+					 id="image"
+					 width="250"
+					 height="auto">
+
+				<input style="display: none;" class="block
 				w-full
 				px-3
 				py-1.5
@@ -211,8 +206,9 @@ echo form_open_multipart('posts/create', $attributes)
 				ease-in-out
 				m-0
 				focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded uppercase"
-				type="file" name="userfile" size="20">
-				<button class="mt-5 btn btn_outlined btn_secondary uppercase">Browse</button>
+				type="file" name="userfile" id="myfile" size="20">
+
+				<div class="mt-5 btn btn_outlined btn_secondary uppercase" onclick="browse()">Elegir Imagen</div>
 			</div>
 		</div>
 	</div>
@@ -250,5 +246,25 @@ echo form_open_multipart('posts/create', $attributes)
 			$(this).append("<textarea name='steps' style='display:none'>"+hvalue+"</textarea>");
 		});
 	})
+
+
+	function browse() {
+		document.getElementById("myfile").click();
+	}
+
+
+	document.getElementById('myfile').addEventListener('change', function(){
+		if (this.files[0] ) {
+			var picture = new FileReader();
+			picture.readAsDataURL(this.files[0]);
+			picture.addEventListener('load', function(event) {
+				document.getElementById('image').setAttribute('src', event.target.result);
+				document.getElementById('image').style.display = 'block';
+			});
+		}
+	});
+
+
+
 
 </script>
