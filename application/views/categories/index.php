@@ -64,12 +64,22 @@
 										<span class="la la-ellipsis-v text-4xl leading-none"></span>
 									</button>
 									<div class="dropdown-menu">
-										<a href="<?php echo base_url('/categories/posts/' . $category['category_id']) ?>">Ver Posts</a>
-										<a href="#">Cambiar Visibilidad</a>
-										<hr>
-										<a href="#">Something Else</a>
+										<a href="<?php echo base_url('/categories/edit/' . $category['category_id']) ?>">
+											<span  class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
+												<span class="la la-pen-fancy"></span>
+											</span>
+											Editar
+										</a>
+										<a href="<?php echo base_url('/categories/delete/' . $category['category_id']) ?>">
+											<span  class="btn btn-icon btn_outlined btn_danger lg:mt-2 ltr:ml-2 rtl:mr-2 lg:ltr:ml-0 lg:rtl:mr-0">
+												<span class="la la-trash-alt"></span>
+											</span>
+											Eliminar
+										</a>
+
 									</div>
 								</div>
+								<!--
 								<a href="#"
 								   class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
 									<span class="la la-pen-fancy"></span>
@@ -78,6 +88,7 @@
 								   class="btn btn-icon btn_outlined btn_danger lg:mt-2 ltr:ml-2 rtl:mr-2 lg:ltr:ml-0 lg:rtl:mr-0">
 									<span class="la la-trash-alt"></span>
 								</a>
+								-->
 							</div>
 						</div>
 					</div>

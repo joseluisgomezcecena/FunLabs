@@ -22,6 +22,8 @@ $route['post/(:any)'] = 'pages/post/$1'; //read single post
 
 //category
 $route['categories/create'] = 'categories/create';
+$route['categories/edit/(:any)'] = 'categories/edit/$1';
+$route['categories/delete/(:any)'] = 'categories/delete/$1';
 $route['categories'] = 'categories/index';
 $route['categories/posts/(:any)'] = 'categories/posts/$1';
 
