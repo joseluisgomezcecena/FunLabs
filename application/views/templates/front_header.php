@@ -12,7 +12,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="<?php  echo base_url() ?>assets/images/favicon.ico" />
+	<link rel="shortcut icon" href="<?php  echo base_url() ?>assets/images/favicon/favicon.ico" />
 
 	<!-- Css -->
 	<link href="<?php  echo base_url() ?>assets/libs/tiny-slider/tiny-slider.css" rel="stylesheet">

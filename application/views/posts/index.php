@@ -37,44 +37,7 @@
 	</div>
 
 	<div class="flex flex-wrap gap-2 items-center ltr:ml-auto rtl:mr-auto mt-5 lg:mt-0">
-
-		<!-- Layout
 		<div class="flex gap-x-2">
-			<a href="blog-list.html" class="btn btn-icon btn-icon_large btn_outlined btn_secondary">
-				<span class="la la-bars"></span>
-			</a>
-			<a href="#" class="btn btn-icon btn-icon_large btn_outlined btn_primary">
-				<span class="la la-list"></span>
-			</a>
-			<a href="blog-list-card-columns.html"
-			   class="btn btn-icon btn-icon_large btn_outlined btn_secondary">
-				<span class="la la-th-large"></span>
-			</a>
-		</div>
-		-->
-		<!-- Search
-		<form class="flex flex-auto items-center" action="#">
-			<label class="form-control-addon-within rounded-full">
-				<input type="text" class="form-control border-none" placeholder="Buscar">
-				<button type="button"
-						class="btn btn-link text-gray-300 dark:text-gray-700 dark:hover:text-primary text-xl leading-none la la-search ltr:mr-4 rtl:ml-4"></button>
-			</label>
-		</form>
-		-->
-		<div class="flex gap-x-2">
-
-			<!-- Sort By
-			<div class="dropdown">
-				<button class="btn btn_outlined btn_secondary uppercase" data-toggle="dropdown-menu">
-					Sort By
-					<span class="ltr:ml-3 rtl:mr-3 la la-caret-down text-xl leading-none"></span>
-				</button>
-				<div class="dropdown-menu">
-					<a href="#">Ascending</a>
-					<a href="#">Descending</a>
-				</div>
-			</div>
-			-->
 			<!-- Add New -->
 			<a href="<?php echo base_url() ?>/posts/create" class="btn btn_primary uppercase">Nueva Publicación</a>
 		</div>

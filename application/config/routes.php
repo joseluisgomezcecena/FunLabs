@@ -18,6 +18,8 @@ $route['posts'] = 'posts/index';
 //$route['posts'] = 'posts/main';
 $route['posts/read/(:any)'] = 'posts/read/$1';
 $route['post/(:any)'] = 'pages/post/$1'; //read single post
+
+
 //category
 $route['categories/create'] = 'categories/create';
 $route['categories'] = 'categories/index';

@@ -34,6 +34,9 @@ class PostModel extends  CI_Model{
 	}
 
 
+
+
+
 	public function create_post($post_image)
 	{
 		$slug = url_title($this->input->post('title'));

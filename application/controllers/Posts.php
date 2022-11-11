@@ -85,7 +85,7 @@ class Posts extends CI_Controller
 			$this->PostModel->create_post($post_image);
 
 			//session message
-			$this->session->set_flashdata('post_created', 'Your post was created.');
+			$this->session->set_flashdata('post_created', 'Tu publicación fue creada.');
 
 
 			redirect(base_url() .'posts');

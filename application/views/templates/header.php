@@ -5,21 +5,21 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-	<title>Dashboard - Yeti</title>
+	<title>CienciaBook - Ciencia y Diversión</title>
 
 
 	<!-- Generics -->
-	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-32.png" sizes="32x32">
-	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-128.png" sizes="128x128">
-	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-192.png" sizes="192x192">
+	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-32x32.png" sizes="128x128">
+	<link rel="icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-32x32.png" sizes="192x192">
 
 	<!-- Android -->
-	<link rel="shortcut icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-196.png" sizes="196x196">
+	<link rel="shortcut icon" href="<?php echo base_url() ?>/assets/images/favicon/android-chrome-192x192.png" sizes="196x196">
 
 	<!-- iOS -->
-	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-152.png" sizes="152x152">
-	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-167.png" sizes="167x167">
-	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/favicon-180.png" sizes="180x180">
+	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/apple-touch-icon.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/apple-touch-icon.png" sizes="167x167">
+	<link rel="apple-touch-icon" href="<?php echo base_url() ?>/assets/images/favicon/apple-touch-icon.png" sizes="180x180">
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/style.css" />
 
@@ -744,9 +744,9 @@
 
 	<?php if($this->session->flashdata('post_created')): ?>
 
-		<div class="alert  alert_info">
-			<strong class="uppercase"><bdi>Info!</bdi></strong>
-			<?php $this->session->flashdata('post_created') ?>
+		<div class="alert alert_info mb-5 mt-5">
+			<strong class="uppercase"><bdi>Publicación creada.</bdi></strong>
+			<?php echo $this->session->flashdata('post_created') ?>
 			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
 		</div>
 
