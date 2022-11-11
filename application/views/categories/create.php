@@ -2,7 +2,7 @@
 <section class="breadcrumb">
 	<h1><?= $title ?></h1>
 	<ul>
-		<li><a href="#">Pages</a></li>
+		<li><a href="#">Paginas</a></li>
 		<li class="divider la la-arrow-right"></li>
 		<li><a href="#">Blog</a></li>
 		<li class="divider la la-arrow-right"></li>
@@ -35,17 +35,23 @@
 
 		<!-- Publish -->
 		<div class="card p-5 flex flex-col gap-y-5">
-			<h3>Publish</h3>
+			<h3>Acciones</h3>
 
 			<div class="flex flex-wrap gap-2 mt-5">
-				<button type="submit" name="submit" class="btn btn_primary uppercase">Publish</button>
+				<button type="submit" name="submit" class="btn btn_primary uppercase">Publicar</button>
 			</div>
 		</div>
 
 		<!-- Featured Image -->
 		<div class="card p-5">
-			<h3>Featured Image</h3>
-			<input class="block
+			<h3>Imagen de la Categoria</h3>
+
+			<img src=""
+				 id="image"
+				 width="250"
+				 height="auto">
+
+			<input style="display: none;" class="block
 				w-full
 				px-3
 				py-1.5
@@ -59,10 +65,32 @@
 				ease-in-out
 				m-0
 				focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded uppercase"
-				   type="file" name="userfile" size="20">
+				   type="file" name="userfile" id="myfile" size="20">
+
+      			<div class="mt-5 btn btn_outlined btn_secondary uppercase" onclick="browse()">Elegir Imagen</div>
+
 		</div>
 	</div>
 </div>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+	function browse() {
+		document.getElementById("myfile").click();
+	}
+
+
+	document.getElementById('myfile').addEventListener('change', function(){
+		if (this.files[0] ) {
+			var picture = new FileReader();
+			picture.readAsDataURL(this.files[0]);
+			picture.addEventListener('load', function(event) {
+				document.getElementById('image').setAttribute('src', event.target.result);
+				document.getElementById('image').style.display = 'block';
+			});
+		}
+	});
+
+</script>
