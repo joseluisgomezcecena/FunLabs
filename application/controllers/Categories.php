@@ -9,7 +9,7 @@ class Categories extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = 'Categories';
+		$data['title'] = 'Categorias';
 
 		$data['categories'] = $this->CategoryModel->get_categories();
 
