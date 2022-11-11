@@ -75,6 +75,13 @@
 	} );
 </script>
 
+
+<script>
+	setTimeout(function() {
+		$('.alert').hide(300);
+	}, 5000);
+</script>
+
 </body>
 
 </html>
