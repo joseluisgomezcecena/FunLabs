@@ -54,7 +54,24 @@
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
 	$(document).ready( function () {
-		$('#myTable').DataTable();
+		$('#myTable').DataTable({
+			"language": {
+				"lengthMenu": "Mostrar _MENU_ publicaciones por pagina",
+				"zeroRecords": "No se encontraron publicaciones - 😢",
+				"info": "Showing page _PAGE_ of _PAGES_",
+				"infoEmpty": "No hay publicaciones disponibles",
+				"infoFiltered": "(filtrando de _MAX_ publicaciones totales)",
+				"search": "Buscar:",
+				"infoThousands": ",",
+				"loadingRecords": "Cargando...",
+				"paginate": {
+					"first": "Primero",
+					"last": "Último",
+					"next": "Siguiente",
+					"previous": "Anterior"
+				},
+			}
+		});
 	} );
 </script>
 

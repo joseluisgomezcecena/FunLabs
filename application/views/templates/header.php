@@ -758,7 +758,7 @@
 
 	<?php if($this->session->flashdata('login_success')): ?>
 
-		<div class="alert alert_outlined alert_success mb-5 mt-5">
+		<div class="alert  alert_info mb-5 mt-5">
 			<strong class="uppercase"><bdi>Sesión iniciada</bdi></strong>
 			<?php echo $this->session->flashdata('login_success') ?>
 			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
