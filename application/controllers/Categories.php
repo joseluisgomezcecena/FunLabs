@@ -19,9 +19,11 @@ class Categories extends CI_Controller
 	}
 
 
+
+
 	public function create()
 	{
-		$data['title'] = "Create Category";
+		$data['title'] = "Crear Categorias";
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
 
@@ -58,6 +60,10 @@ class Categories extends CI_Controller
 			redirect('categories');
 		}
 	}
+
+
+
+
 
 
 	public function posts($id)

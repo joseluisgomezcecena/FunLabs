@@ -29,6 +29,32 @@
 	<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
 
+	<style>
+		th{
+			border: 0 !important;
+		}
+		tbody{
+			border: 0 !important;
+		}
+		table{
+			border: 0 !important;
+		}
+
+		input[type="search"] {
+			border: 1px solid #c9c9c9 !important;
+			background-color: white !important;
+			border-radius: 9999px !important;
+			box-shadow: 2px 2px 2px #a4a2a2 !important;
+			width: 250px !important;
+		}
+
+		.dataTables_wrapper .dataTables_length select {
+			background-color: white !important;
+			box-shadow: 1px 1px 1px #a4a2a2 !important;
+		}
+
+	</style>
+
 
 </head>
 
