@@ -85,13 +85,13 @@ class Users extends CI_Controller{
 
 
 				//session message
-				$this->session->set_flashdata('login_success', 'You are now logged in.');
+				$this->session->set_flashdata('login_success', 'Haz iniciado sesión.');
 				redirect(base_url() . 'posts');
 			}
 			else
 			{
 				//session message
-				$this->session->set_flashdata('login_failed', 'Incorrect username or password.');
+				$this->session->set_flashdata('login_failed', 'Usuario y/o contraseña incorrectos.');
 				redirect(base_url() . 'users/login');
 			}
 		}
@@ -108,7 +108,7 @@ class Users extends CI_Controller{
 		$this->session->unset_userdata('user_name');
 
 		//session message
-		$this->session->set_flashdata('user_logged_out', 'You have logged out.');
+		$this->session->set_flashdata('user_logged_out', 'Haz cerrado tu sesión.');
 		redirect(base_url() . 'users/login');
 	}
 

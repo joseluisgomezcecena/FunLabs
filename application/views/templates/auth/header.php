@@ -50,56 +50,52 @@
 <!-- Workspace -->
 <main class="workspace">
 
-	<?php if($this->session->flashdata('user_registered')): ?>
+	<div class="container flex items-center justify-center">
+		<div class="w-full md:w-1/2 xl:w-1/3">
+		<?php if($this->session->flashdata('user_registered')): ?>
 
-		<div class="alert alert_outlined alert_info">
-			<strong class="uppercase"><bdi>Info!</bdi></strong>
-			<?php $this->session->flashdata('user_registered') ?>
-			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
+			<div class="alert alert_outlined alert_info">
+				<strong class="uppercase"><bdi>Info!</bdi></strong>
+				<?php $this->session->flashdata('user_registered') ?>
+				<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
+			</div>
+
+		<?php endif; ?>
+
+
+		<?php if($this->session->flashdata('post_created')): ?>
+
+			<div class="alert alert_outlined alert_info">
+				<strong class="uppercase"><bdi>Info!</bdi></strong>
+				<?php $this->session->flashdata('post_created') ?>
+				<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
+			</div>
+
+		<?php endif; ?>
+
+
+		<?php if($this->session->flashdata('login_failed')): ?>
+
+			<div class="alert  alert_danger">
+				<strong class="uppercase"><bdi>Error</bdi></strong>
+				<?php echo $this->session->flashdata('login_failed') ?>
+				<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
+			</div>
+
+		<?php endif; ?>
+
+
+
+
+
+		<?php if($this->session->flashdata('user_logged_out')): ?>
+
+			<div class="alert  alert_info mb-5 mt-5">
+				<strong class="uppercase"><bdi>Haz cerrado sesión</bdi></strong>
+				<?php echo $this->session->flashdata('user_logged_out') ?>.
+				<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
+			</div>
+
+		<?php endif; ?>
 		</div>
-
-	<?php endif; ?>
-
-
-	<?php if($this->session->flashdata('post_created')): ?>
-
-		<div class="alert alert_outlined alert_info">
-			<strong class="uppercase"><bdi>Info!</bdi></strong>
-			<?php $this->session->flashdata('post_created') ?>
-			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
-		</div>
-
-	<?php endif; ?>
-
-
-	<?php if($this->session->flashdata('login_failed')): ?>
-
-		<div class="alert alert_outlined alert_danger">
-			<strong class="uppercase"><bdi>Login Failed</bdi></strong>
-			<?php $this->session->flashdata('login_failed') ?>Incorrect username or password.
-			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
-		</div>
-
-	<?php endif; ?>
-
-
-	<?php if($this->session->flashdata('login_success')): ?>
-
-		<div class="alert alert_outlined alert_success mb-5 mt-5">
-			<strong class="uppercase"><bdi>Logged in</bdi></strong>
-			<?php $this->session->flashdata('login_success') ?>You are now logged in.
-			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
-		</div>
-
-	<?php endif; ?>
-
-
-	<?php if($this->session->flashdata('user_logged_out')): ?>
-
-		<div class="alert alert_outlined alert_success mb-5 mt-5">
-			<strong class="uppercase"><bdi>Logged out</bdi></strong>
-			<?php $this->session->flashdata('user_logged_out') ?>You have logged out.
-			<button type="button" class="dismiss la la-times" data-dismiss="alert"></button>
-		</div>
-
-	<?php endif; ?>
+	</div>
