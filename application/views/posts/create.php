@@ -17,9 +17,7 @@ echo form_open_multipart(base_url() . 'posts/create', $attributes)
 ?>
 
 	<div class="grid lg:grid-cols-4 gap-5">
-
 		<!-- Content -->
-
 		<div class="lg:col-span-2 xl:col-span-3">
 			<div class="card p-5">
 

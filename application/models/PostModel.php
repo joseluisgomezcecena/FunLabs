@@ -7,6 +7,9 @@ class PostModel extends  CI_Model{
 	}
 
 
+
+
+
 	public function get_posts($id=FALSE)
 	{
 		if($id === FALSE)
@@ -125,6 +128,12 @@ class PostModel extends  CI_Model{
 
 		$user_id = $this->session->userdata('user_id');
 
+		if($user_id['level'] == 2){
+			$visibility = 1;
+		}else{
+			$visibility = 0;
+		}
+
 		$slug = url_title($this->input->post('title'));
 
 		$status = $this->input->post('status') == '1' ? 1 : 0;
@@ -136,12 +145,13 @@ class PostModel extends  CI_Model{
 		$category_id = implode(',',$category);
 
 
+
 		$data = array(
 			'title'	=>	$this->input->post('title'),
 			'slug'	=>	$slug,
 			'body'  =>	$this->input->post('body'),
 			'status'  =>  $status,
-			'visibility'  =>  0,
+			'visibility'  =>  $visibility,
 			'category_id'  =>  $category_id,
 			'steps' => $this->input->post('steps'),
 			'image_url'  =>  $post_image,

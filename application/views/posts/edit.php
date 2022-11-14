@@ -13,7 +13,7 @@
 
 <?php
 $attributes = array('id' => 'createform');
-echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
+echo form_open_multipart(base_url() . "posts/edit/{$post['id']}", $attributes)
 ?>
 
 <div class="grid lg:grid-cols-4 gap-5">
@@ -35,17 +35,17 @@ echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
 			</div>
 			<div class="mb-5 xl:w-1/2">
 				<label class="label block mb-2" for="slug">Slug</label>
-				<input id="slug" type="text" class="form-control" value="<?php echo $post['slug'] ?>">
+				<input id="slug" type="text" class="form-control bg-[#D1D5DB]" value="<?php echo $post['slug'] ?>" readonly>
 			</div>
 			<div class="mb-5">
 				<label class="label block mb-2" for="content">Content</label>
-				<textarea id="content" name="body" class="form-control" rows="16"><?php echo $post['body'] ?></textarea>
+				<textarea id="content" name="body" class="form-control" rows="5"><?php echo $post['body'] ?></textarea>
 			</div>
 			<div class="mb-5">
 				<label class="label block mb-2" for="content">Pasos para replicar tu experimento</label>
 			</div>
 			<div id="editor">
-				<?php echo $post['steps']; ?>
+				<?php echo $post['steps']; ?><br><br><br><br><br><br><br><br><br><br><br><br><br/>
 			</div>
 
 		</div>
@@ -55,52 +55,32 @@ echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
 
 		<!-- Publish -->
 		<div class="card p-5 flex flex-col gap-y-5">
-			<h3>Publish</h3>
+			<h3>Acciones</h3>
+			<div class="flex items-center">
+
+			</div>
+
 			<div class="flex items-center">
 				<!--
 				<div class="w-1/4">
-					<label class="label block">Status</label>
+					<label class="label block">Publicar</label>
 				</div>
+				-->
+				<!--
 				<div class="w-3/4 ml-2">
-					<div class="custom-select">
-						<select class="form-control">
-							<option>Draft</option>
-							<option>Option</option>
-						</select>
-						<div class="custom-select-icon la la-caret-down"></div>
-					</div>
+					<label class="label switch">
+						<input type="checkbox" name="status" value="1" checked>
+						<span></span>
+						<span>Inmediatamente</span>
+					</label>
 				</div>
 				-->
 			</div>
-			<div class="flex items-center">
-				<div class="w-1/4">
-					<label class="label block">Visibility</label>
-				</div>
-				<div class="w-3/4 ml-2">
-					<div class="custom-select">
-						<select class="form-control" name="visibility">
-							<option <?php if($post['visibility'] == 1){echo "selected";}else{echo "";} ?> value="1">Public</option>
-							<option <?php if($post['visibility'] == 0){echo "selected";}else{echo "";} ?> value="0">Private</option>
-						</select>
-						<div class="custom-select-icon la la-caret-down"></div>
-					</div>
-				</div>
-			</div>
-			<div class="flex items-center">
-				<div class="w-1/4">
-					<label class="label block">Publish</label>
-				</div>
-				<div class="w-3/4 ml-2">
-					<label class="label switch">
-						<input type="checkbox" name="status" value="1" <?php if($post['status']==1){echo"checked";} ?>>
-						<span></span>
-						<span>Immediately</span>
-					</label>
-				</div>
-			</div>
 			<div class="flex flex-wrap gap-2 mt-5">
-				<button type="submit" name="submit" class="btn btn_primary uppercase">Save Changes</button>
+				<button type="submit" name="submit" class="btn btn_primary uppercase">Guardar Cambios</button>
+				<!--
 				<button class="btn btn_outlined btn_secondary uppercase">Save Draft</button>
+				-->
 			</div>
 		</div>
 
@@ -186,8 +166,8 @@ echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
 		<!-- Featured Image -->
 		<div class="card p-5">
 			<h3>Featured Image</h3>
-			<img class="image" src="<?php echo base_url() . 'assets/uploads/posts/' . $post['image_url'] ?>" />
-			<input class="block
+			<img class="image" id="image" src="<?php echo base_url() . 'assets/uploads/posts/' . $post['image_url'] ?>" />
+			<input style="display: none !important;" class="block
 				w-full
 				px-3
 				py-1.5
@@ -201,7 +181,10 @@ echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
 				ease-in-out
 				m-0
 				focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded uppercase"
-				   type="file" name="userfile" size="20">
+				   type="file" name="userfile" id="myfile" size="20">
+
+				<div class="mt-5 btn btn_outlined btn_secondary uppercase" onclick="browse()">Elegir Imagen</div>
+
 		</div>
 	</div>
 </div>
@@ -232,6 +215,26 @@ echo form_open_multipart("posts/edit/{$post['id']}", $attributes)
 			$(this).append("<textarea name='steps' style='display:none'>"+hvalue+"</textarea>");
 		});
 	})
+
+
+
+	function browse() {
+		document.getElementById("myfile").click();
+	}
+
+
+	document.getElementById('myfile').addEventListener('change', function(){
+		if (this.files[0] ) {
+			var picture = new FileReader();
+			picture.readAsDataURL(this.files[0]);
+			picture.addEventListener('load', function(event) {
+				document.getElementById('image').setAttribute('src', event.target.result);
+				document.getElementById('image').style.display = 'block';
+			});
+		}
+	});
+
+
 
 </script>
 

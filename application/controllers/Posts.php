@@ -19,7 +19,7 @@ class Posts extends CI_Controller
 
 	public function view($id = NULL)
 	{
-		$data['post'] = $this->PostModel->get_posts($id);
+		$data['post'] = $this->PostModel->get_posts_logged($id);
 
 		if(empty($data['post']))
 		{
@@ -149,7 +149,7 @@ class Posts extends CI_Controller
 
 
 			$this->PostModel->edit_post($post_image, $uploaded);
-			redirect('posts');
+			redirect(base_url() . 'posts');
 		}
 
 	}
@@ -159,7 +159,7 @@ class Posts extends CI_Controller
 
 	public function delete($id = NULL)
 	{
-		$data['title'] = "Delete Post";
+		$data['title'] = "Eliminar Publicación";
 		$data['categories'] = $this->CategoryModel->get_categories();
 		$data['post'] = $this->PostModel->get_posts($id);
 
