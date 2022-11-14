@@ -35,16 +35,18 @@
 		<tr>
 			<td>
 		<div class="flex flex-col gap-y-5">
-			<div class="card card_row card_hoverable mb-5">
+			<div class="card card_row card_hoverable mb-5 hover:scale-105 hover:shadow-lg transition-transform duration-200">
 				<div>
 					<div class="image">
 						<div class="aspect-w-4 aspect-h-3">
 							<img src="<?php echo base_url() . 'assets/uploads/posts/' . $post['image_url'] ?>">
 						</div>
+						<!--
 						<label class="custom-checkbox absolute top-0 ltr:left-0 rtl:right-0 mt-2 ltr:ml-2 rtl:mr-2">
 							<input type="checkbox" data-toggle="cardSelection">
 							<span></span>
 						</label>
+						-->
 						<div
 								class="badge badge_outlined badge_secondary uppercase absolute top-0 ltr:right-0 rtl:left-0 mt-2 ltr:mr-2 rtl:ml-2">
 							<?php echo $post['category_name'] ?>
@@ -61,38 +63,55 @@
 						<?php
 						if($post['status'] == 1)
 						{
-							echo "Published";
+							echo "Publicado";
+						}
+						elseif ($post['status'] == 0)
+						{
+							echo "No Publicado";
+						}
+						elseif ($post['status'] == 2)
+						{
+							echo "Borrador";
 						}
 						else
 						{
-							echo "Unpublished";
+							echo "No Publicado";
 						}
 
 						?>
 					</p>
-					<h6 class="uppercase mt-4 lg:mt-auto">Date Created</h6>
-					<p><?php echo date_format(date_create($post['created_at']), "d/m/Y")  ?></p>
+					<h6 class="uppercase mt-4 lg:mt-auto">Fecha de publicación:</h6>
+					<p><?php echo date_format(date_create($post['created_at']), "d/M/Y")  ?></p>
 				</div>
 				<div class="actions">
+
 					<div class="dropdown ltr:-ml-3 rtl:-mr-3 lg:ltr:ml-auto lg:rtl:mr-auto">
 						<button class="btn-link" data-toggle="dropdown-menu">
 							<span class="la la-ellipsis-v text-4xl leading-none"></span>
 						</button>
 						<div class="dropdown-menu">
-							<a href="<?php echo base_url('/posts/' . $post['id']) ?>">Ver Post</a>
-							<a href="#">Cambiar Visibilidad</a>
-							<hr>
-							<a href="#">Something Else</a>
+							<a href="<?php echo base_url('/posts/' . $post['id']) ?>">
+											<span  class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
+												<span class="la la-eye"></span>
+											</span>
+								Ver Publicación
+							</a>
+
+							<a href="<?php echo base_url('/posts/edit/' . $post['id']) ?>">
+											<span  class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
+												<span class="la la-pen-fancy"></span>
+											</span>
+								Editar
+							</a>
+							<a href="<?php echo base_url('/posts/delete/' . $post['id']) ?>">
+											<span  class="btn btn-icon btn_outlined btn_danger lg:mt-2 ltr:ml-2 rtl:mr-2 lg:ltr:ml-0 lg:rtl:mr-0">
+												<span class="la la-trash-alt"></span>
+											</span>
+								Eliminar
+							</a>
 						</div>
 					</div>
-					<a href="<?php echo base_url('/posts/edit/' . $post['id']) ?>"
-					   class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
-						<span class="la la-pen-fancy"></span>
-					</a>
-					<a href="<?php echo base_url('/posts/delete/' . $post['id']) ?>"
-					   class="btn btn-icon btn_outlined btn_danger lg:mt-2 ltr:ml-2 rtl:mr-2 lg:ltr:ml-0 lg:rtl:mr-0">
-						<span class="la la-trash-alt"></span>
-					</a>
+
 				</div>
 			</div>
 		</div>

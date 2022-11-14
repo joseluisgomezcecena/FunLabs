@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
+<?php if($this->session->userdata('logged_in'))
+{
+	$user_info = $this->session->userdata('user_id');
+}
+else
+{
+	redirect(base_url() . 'users/login');
+}
+?>
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -185,27 +193,43 @@
 		<div class="dropdown">
 			<button class="flex items-center ltr:ml-4 rtl:mr-4" data-toggle="custom-dropdown-menu"
 					data-tippy-arrow="true" data-tippy-placement="bottom-end">
-				<span class="avatar">JD</span>
+				<span style="border:transparent !important;" class="avatar">
+					 <img src="<?php echo base_url() ?>assets/uploads/users/<?php echo $user_info['profile_image'];?>" alt="<?php echo strtoupper(substr($user_info['username'],0,1));   ?>">
+				</span>
 			</button>
 			<div class="custom-dropdown-menu w-64">
 				<div class="p-5">
-					<h5 class="uppercase">John Doe</h5>
-					<p>Editor</p>
+					<h5 class="uppercase">
+						<?php echo $user_info['username'] ?>
+					</h5>
+					<p>
+						<?php
+						if($user_info['level']==0)
+						{echo "Usuario Registrado";}
+						elseif($user_info['level']==1)
+						{echo "Administrador";}
+						elseif($user_info['level']==2)
+						{echo "Super Administrador";}
+						else{echo "Usuario Registrado";}
+						?>
+					</p>
 				</div>
 				<hr>
 				<div class="p-5">
-					<a href="<?php echo base_url() ?>/users/profile" class="flex items-center text-normal hover:text-primary">
+					<a href="<?php echo base_url() ?>users/profile" class="flex items-center text-normal hover:text-primary">
 						<span class="la la-user-circle text-2xl leading-none ltr:mr-2 rtl:ml-2"></span>
-						View Profile
+						Mi Perfil
 					</a>
+					<!--
 					<a href="#" class="flex items-center text-normal hover:text-primary mt-5">
 						<span class="la la-key text-2xl leading-none ltr:mr-2 rtl:ml-2"></span>
 						Change Password
 					</a>
+					-->
 				</div>
 				<hr>
 				<div class="p-5">
-					<a href="<?php echo base_url() ?>/users/logout" class="flex items-center text-normal hover:text-primary">
+					<a href="<?php echo base_url() ?>users/logout" class="flex items-center text-normal hover:text-primary">
 						<span class="la la-power-off text-2xl leading-none ltr:mr-2 rtl:ml-2"></span>
 						Logout
 					</a>
@@ -226,10 +250,20 @@
 	<div class="menu-items">
 		<div class="menu-header hidden">
 			<a href="#" class="flex items-center mx-8 mt-8">
-				<span class="avatar w-16 h-16">JD</span>
+				<span class="avatar w-16 h-16"><?php echo strtoupper(substr($user_info['username'],0,1));   ?></span>
 				<div class="ltr:ml-4 rtl:mr-4 ltr:text-left rtl:text-right">
-					<h5>John Doe</h5>
-					<p class="mt-2">Editor</p>
+					<h5><?php echo $user_info['username']; ?></h5>
+					<p class="mt-2">
+						<?php
+						if($user_info['level']==0)
+						{echo "Usuario Registrado";}
+						elseif($user_info['level']==1)
+						{echo "Administrador";}
+						elseif($user_info['level']==2)
+						{echo "Super Administrador";}
+						else{echo "Usuario Registrado";}
+						?>
+					</p>
 				</div>
 			</a>
 			<hr class="mx-8 my-4">

@@ -1,12 +1,14 @@
 <?php
 
-class Posts extends CI_Controller
+class Dashboards extends CI_Controller
 {
 	//display all posts
 	public function index()
 	{
-		$data['title'] = "Mis Publicaciones";
-		$data['posts'] = $this->PostModel->get_posts_logged();
+		$data['title'] = "Mi panel de control";
+
+		if($this->session->userdata)
+		$data['posts'] = $this->PostModel->get_posts();
 
 		//load header, page & footer
 		$this->load->view('templates/header');

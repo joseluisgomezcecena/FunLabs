@@ -3,11 +3,11 @@
 <section class="breadcrumb">
 	<h1><?= $title ?></h1>
 	<ul>
-		<li><a href="#">Pages</a></li>
+		<li><a href="#">Paginas</a></li>
 		<li class="divider la la-arrow-right"></li>
-		<li><a href="#">Blog</a></li>
+		<li><a href="#">Configuración</a></li>
 		<li class="divider la la-arrow-right"></li>
-		<li>Add Post</li>
+		<li><?= $title ?>.</li>
 	</ul>
 </section>
 
@@ -28,10 +28,10 @@
 	<div class="flex flex-col gap-y-5 lg:col-span-2 xl:col-span-1">
 
 		<!-- Featured Image -->
-		<div class="card p-5 justify-center">
+		<div class="card p-5 justify-center center-block content-center">
 			<h3>Profile Picture</h3>
 			<img style="text-align: center;" class="image items-center center-block justify-center" src="<?php echo base_url() . 'assets/uploads/users/' . $user['profile_image'] ?>" alt="">
-			<input class="block
+			<input style="display: none !important;" class="block
 				w-full
 				px-3
 				py-1.5
@@ -45,7 +45,10 @@
 				ease-in-out
 				m-0
 				focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded uppercase"
-				   type="file" name="userfile" size="20">
+				   type="file" name="userfile" id="myfile" size="20">
+
+				<div class="mt-5 btn btn_outlined btn_secondary uppercase" onclick="browse()">Elegir Imagen</div>
+
 		</div>
 	</div>
 
@@ -71,7 +74,7 @@
 						<input type="text" class="form-control w_90" name="username" value="<?php echo $user['username'] ?>" id="" placeholder="This will be displayed to other users." />
 					</div>
 
-					<div class="lg:col-span-1 xl:col-span-1">
+					<div class="lg:col-span-2 xl:col-span-2">
 						<label for="ice-cream-choice">Email:</label>
 						<input type="text" class="form-control w_90" name="email" id="" value="<?php echo $user['email'] ?>" placeholder="Email is wont be displayed to other users." />
 					</div>
@@ -107,7 +110,7 @@
 				</div>
 
 
-				<div class="mb-5">
+				<div class="mb-5 mt-5">
 					<label class="label block mb-2" for="content">Bio</label>
 					<textarea id="content" name="bio" class="form-control" rows="16"></textarea>
 				</div>
@@ -122,4 +125,9 @@
 </div>
 <?php echo form_close() ?>
 
+<script>
+	function browse() {
+		document.getElementById("myfile").click();
+	}
+</script>
 

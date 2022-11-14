@@ -86,6 +86,9 @@ class Users extends CI_Controller{
 
 				//session message
 				$this->session->set_flashdata('login_success', 'Haz iniciado sesión.');
+
+
+
 				redirect(base_url() . 'posts');
 			}
 			else
@@ -101,6 +104,8 @@ class Users extends CI_Controller{
 
 
 
+
+
 	public function logout()
 	{
 		$this->session->unset_userdata('logged_in');
@@ -113,9 +118,12 @@ class Users extends CI_Controller{
 	}
 
 
+
+
+
 	public function profile()
 	{
-		$data['title'] = 'Profile';
+		$data['title'] = 'Mi Perfil';
 
 		$user_array  = $this->session->userdata('user_id');
 		$user_id = $user_array['id'];
@@ -180,12 +188,17 @@ class Users extends CI_Controller{
 	}
 
 
+
+
+
 	public function get_user($id)
 	{
 		$user_array  = $this->session->userdata('user_id');
 		$id = $user_array['id'];
 		$data['user'] = $this->UserModel->get_user($id);
 	}
+
+
 
 
 	function check_username_exists($username)

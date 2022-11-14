@@ -38,10 +38,12 @@
 									<div class="aspect-w-4 aspect-h-3">
 										<img src="<?php echo base_url() . 'assets/uploads/categories/' . $category['category_image_url'] ?>">
 									</div>
+									<!--
 									<label class="custom-checkbox absolute top-0 ltr:left-0 rtl:right-0 mt-2 ltr:ml-2 rtl:mr-2">
 										<input type="checkbox" data-toggle="cardSelection">
 										<span></span>
 									</label>
+									-->
 									<div
 										class="badge badge_outlined badge_secondary uppercase absolute top-0 ltr:right-0 rtl:left-0 mt-2 ltr:mr-2 rtl:ml-2">
 										<?php echo $category['category_name'] ?>
@@ -49,14 +51,15 @@
 								</div>
 							</div>
 							<div class="header">
-								<h5><?php echo $category['category_name'] ?> <small><?php echo $category['category_name'] ?></small></h5>
-								<p><?php echo word_limiter($category['category_name'], 50)  ?></p>
+								<h5><?php  echo $category['category_name'] ?> <small><?php // echo $category['category_name'] ?></small></h5>
+								<p><?php # echo word_limiter($category['category_name'], 50)  ?></p>
 							</div>
 							<div class="body">
+								<!--
 								<h6 class="uppercase">Status</h6>
-
-								<h6 class="uppercase mt-4 lg:mt-auto">Date Created</h6>
-								<p><?php echo date_format(date_create($category['created_at']), "d/m/Y")  ?></p>
+								-->
+								<h6 class="uppercase mt-4 lg:mt-auto">Fecha de publicación</h6>
+								<p><?php echo date_format(date_create($category['created_at']), "d/M/Y")  ?></p>
 							</div>
 							<div class="actions">
 								<div class="dropdown ltr:-ml-3 rtl:-mr-3 lg:ltr:ml-auto lg:rtl:mr-auto">

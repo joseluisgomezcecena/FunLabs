@@ -1,19 +1,19 @@
 <!-- Breadcrumb -->
 
 <section class="breadcrumb">
-	<h1>Blog</h1>
+	<h1><?= $title ?></h1>
 	<ul>
-		<li><a href="#">Pages</a></li>
+		<li><a href="#">Paginas</a></li>
 		<li class="divider la la-arrow-right"></li>
 		<li><a href="#">Blog</a></li>
 		<li class="divider la la-arrow-right"></li>
-		<li>Add Post</li>
+		<li><?= $title ?></li>
 	</ul>
 </section>
 
 <?php
 $attributes = array('id' => 'createform');
-echo form_open_multipart('posts/create', $attributes)
+echo form_open_multipart(base_url() . 'posts/create', $attributes)
 ?>
 
 	<div class="grid lg:grid-cols-4 gap-5">
@@ -55,7 +55,7 @@ echo form_open_multipart('posts/create', $attributes)
 
 			<!-- Publish -->
 			<div class="card p-5 flex flex-col gap-y-5">
-				<h3>Publish</h3>
+				<h3>Acciones</h3>
 					<div class="flex items-center">
 						<!--
 						<div class="w-1/4">
@@ -72,6 +72,7 @@ echo form_open_multipart('posts/create', $attributes)
 						</div>
 						-->
 					</div>
+					<!--
 					<div class="flex items-center">
 						<div class="w-1/4">
 							<label class="label block">Visibility</label>
@@ -86,31 +87,34 @@ echo form_open_multipart('posts/create', $attributes)
 							</div>
 						</div>
 					</div>
+					-->
 					<div class="flex items-center">
 						<div class="w-1/4">
-							<label class="label block">Publish</label>
+							<label class="label block">Publicar</label>
 						</div>
 						<div class="w-3/4 ml-2">
 							<label class="label switch">
-								<input type="checkbox" name="status" value="1">
+								<input type="checkbox" name="status" value="1" checked>
 								<span></span>
-								<span>Immediately</span>
+								<span>Inmediatamente</span>
 							</label>
 						</div>
 					</div>
 				<div class="flex flex-wrap gap-2 mt-5">
-					<button type="submit" name="submit" class="btn btn_primary uppercase">Publish</button>
+					<button type="submit" name="submit" class="btn btn_primary uppercase">Guardar Y Publicar</button>
+					<!--
 					<button class="btn btn_outlined btn_secondary uppercase">Save Draft</button>
+					-->
 				</div>
 			</div>
 
 			<!-- Categories -->
 			<div class="card p-5">
-				<h3>Categories</h3>
+				<h3>Categorias</h3>
 				<div class="tabs">
 					<nav class="tab-nav mt-5">
 						<button class="nav-link h5 uppercase active" data-toggle="tab" data-target="#tab-1">
-							Categories
+							Categorias
 						</button>
 
 					</nav>
