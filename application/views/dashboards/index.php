@@ -19,10 +19,54 @@
 	</div>
 </section>
 
-<table id="myTable" class="table">
+
+
+<div class="grid lg:grid-cols-1 gap-5 mt-5 mb-5">
+
+	<!-- Summaries -->
+	<div class="grid sm:grid-cols-4 gap-5">
+		<div
+				class="card px-4 py-8 flex justify-center items-center text-center lg:transform hover:scale-110 hover:shadow-lg transition-transform duration-200">
+			<div>
+				<span class="text-primary text-5xl leading-none la la-sun"></span>
+				<p class="mt-2">Publicaciones Activas</p>
+				<div class="text-primary mt-5 text-3xl leading-none">18</div>
+			</div>
+		</div>
+		<div
+				class="card px-4 py-8 flex justify-center items-center text-center lg:transform hover:scale-110 hover:shadow-lg transition-transform duration-200">
+			<div>
+				<span class="text-primary text-5xl leading-none la la-cloud"></span>
+				<p class="mt-2">Pendientes De Aprobación</p>
+				<div class="text-primary mt-5 text-3xl leading-none">16</div>
+			</div>
+		</div>
+		<div
+				class="card px-4 py-8 flex justify-center items-center text-center lg:transform hover:scale-110 hover:shadow-lg transition-transform duration-200">
+			<div>
+				<span class="text-primary text-5xl leading-none la la-layer-group"></span>
+				<p class="mt-2">Categorias</p>
+				<div class="text-primary mt-5 text-3xl leading-none">9</div>
+			</div>
+		</div>
+		<div
+				class="card px-4 py-8 flex justify-center items-center text-center lg:transform hover:scale-110 hover:shadow-lg transition-transform duration-200">
+			<div>
+				<span class="text-primary text-5xl leading-none la la-users"></span>
+				<p class="mt-2">Usuarios Registrados</p>
+				<div class="text-primary mt-5 text-3xl leading-none">9</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<table id="myTable" class="table mt-7">
 	<thead>
 	<tr>
-		<th scope="col">Title</th>
+		<th scope="col"></th>
 	</tr>
 	</thead>
 	<tbody>
