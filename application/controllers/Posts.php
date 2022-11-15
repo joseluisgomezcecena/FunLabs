@@ -17,6 +17,8 @@ class Posts extends CI_Controller
 
 
 
+
+
 	public function view($id = NULL)
 	{
 		$data['post'] = $this->PostModel->get_posts_logged($id);
@@ -102,7 +104,7 @@ class Posts extends CI_Controller
 	{
 		$data['title'] = 'Edit this post';
 		$data['categories'] = $this->CategoryModel->get_categories();
-		$data['post'] = $this->PostModel->get_posts($id);
+		$data['post'] = $this->PostModel->get_posts_logged($id);
 
 		//validation style
 		$this->form_validation->set_error_delimiters(
@@ -161,7 +163,7 @@ class Posts extends CI_Controller
 	{
 		$data['title'] = "Eliminar Publicación";
 		$data['categories'] = $this->CategoryModel->get_categories();
-		$data['post'] = $this->PostModel->get_posts($id);
+		$data['post'] = $this->PostModel->get_posts_logged($id);
 
 		if(empty($data['post'])){
 			show_404();

@@ -7,11 +7,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 */
 
+
+//dashboards
+$route['dashboard'] = 'dashboards/index';
+
+
 //posts Admin
 $route['posts/create'] = 'posts/create';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts/delete/(:any)'] = 'posts/delete/$1';
 $route['posts/edit/(:any)'] = 'posts/edit/$1';
+$route['posts/review/(:any)'] = 'posts/review/$1';//review
 $route['posts'] = 'posts/index';
 
 //posts Public

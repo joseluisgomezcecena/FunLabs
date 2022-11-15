@@ -88,8 +88,13 @@ class Users extends CI_Controller{
 				$this->session->set_flashdata('login_success', 'Haz iniciado sesión.');
 
 
+				$user_info = $this->session->userdata('user_id');
 
-				redirect(base_url() . 'posts');
+				if($user_info['level'] == 2){
+					redirect(base_url() . 'dashboard');
+				}else{
+					redirect(base_url() . 'posts');
+				}
 			}
 			else
 			{

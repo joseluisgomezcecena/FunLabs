@@ -53,6 +53,51 @@ class PostModel extends  CI_Model{
 
 
 
+	public function get_posts_pending($id=FALSE)
+	{
+		if($id === FALSE)
+		{
+			$this->db->order_by('id', 'DESC');
+			//$query = $this->db->get('posts');
+			$this->db->select (
+				'posts.id,posts.title,posts.slug,
+				posts.body,posts.steps,posts.image_url,
+				posts.status,posts.visibility,posts.category_id,
+				posts.created_at,posts.user_id,category.category_name,
+				category.created_at AS category_created_at'
+			);
+			$this->db->from ( 'posts' );
+			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );
+			$this->db->where('visibility=', 0);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+		else
+		{
+			$this->db->select (
+				'posts.id,posts.title,posts.slug,
+				posts.body,posts.steps,posts.image_url,
+				posts.status,posts.visibility,posts.category_id,
+				posts.created_at,posts.user_id,category.category_name,
+				category.created_at AS category_created_at'
+			);
+			$this->db->from ( 'posts' );
+			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );
+			$this->db->where('id', $id);
+			$query = $this->db->get();
+
+			return $query->row_array();
+
+		}
+	}
+
+
+
+
+
+
+
 
 	public function get_posts_logged($id=FALSE)
 	{
