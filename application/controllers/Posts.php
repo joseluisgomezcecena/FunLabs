@@ -38,6 +38,38 @@ class Posts extends CI_Controller
 
 
 
+	public function review($id = NULL)
+	{
+		$data['post'] = $this->PostModel->get_posts_logged($id);
+		$data['categories'] = $this->CategoryModel->get_categories();
+
+		if(empty($data['post']))
+		{
+			show_404();
+		}
+
+		$data['title'] = $data['post']['title'];
+
+
+		$this->form_validation->set_rules('review', 'Aceptar o Rechazar', 'required');
+
+		if($this->form_validation->run() === FALSE)
+		{
+			$this->load->view('templates/header');
+			$this->load->view('posts/review', $data); //loading page and data
+			$this->load->view('templates/footer');
+		}
+		else
+		{
+			$this->PostModel->review_post($id);
+			redirect(base_url() . 'dashboard');
+		}
+
+	}
+
+
+
+
 	public function create()
 	{
 		$data['title'] = "Agregar Publicación";

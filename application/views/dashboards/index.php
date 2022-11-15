@@ -81,7 +81,7 @@
 							<span class="la la-ellipsis-v text-4xl leading-none"></span>
 						</button>
 						<div class="dropdown-menu">
-							<a href="<?php echo base_url('/posts/' . $post['id']) ?>">
+							<a href="<?php echo base_url('posts/review/' . $post['id']) ?>">
 											<span  class="btn btn-icon btn_outlined btn_secondary mt-auto ltr:ml-auto rtl:mr-auto lg:ltr:ml-0 lg:rtl:mr-0">
 												<span class="la la-eye"></span>
 											</span>

@@ -99,6 +99,8 @@ class PostModel extends  CI_Model{
 
 
 
+
+
 	public function get_posts_logged($id=FALSE)
 	{
 		if($this->session->userdata('logged_in'))
@@ -236,6 +238,16 @@ class PostModel extends  CI_Model{
 
 
 
+
+	public function review_post($id)
+	{
+		$data = array(
+			'visibility'  =>  $this->input->post('review'),
+		);
+
+		$this->db->where('id', $id);
+		return $this->db->update('posts', $data);
+	}
 
 
 
