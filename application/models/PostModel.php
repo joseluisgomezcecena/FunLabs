@@ -35,7 +35,8 @@ class PostModel extends  CI_Model{
 				posts.body,posts.steps,posts.image_url,
 				posts.status,posts.visibility,posts.category_id,
 				posts.created_at,posts.user_id,category.category_name,
-				category.created_at AS category_created_at, users.id AS userid, users.name, users.username',
+				category.created_at AS category_created_at, users.id AS userid, 
+				users.name, users.username, users.profile_image',
 			);
 			$this->db->from ( 'posts' );
 			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );

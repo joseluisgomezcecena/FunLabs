@@ -1,4 +1,4 @@
-<!-- Start Hero -->
+<!-- Start Hero
 <section class="relative table w-full py-36 pb-0 lg:py-44 lg:pb-0 bg-primary-600" style="background: url('assets/images/bg2.png') center center no-repeat;">
 	<div class="container">
 		<div class="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
@@ -10,23 +10,23 @@
 					<p class="font-medium lg:leading-normal leading-normal mb-5 text-white">Fecha de publicación: <?php echo date_format(date_create($post['created_at']),"d/m/Y")  ?> <br> </p>
 
 
-					<!--
+
 					<p class="text-white/60 text-lg max-w-xl">Con FunLab podras aprender de una forma divertida, replica nuestros experimentos o sube tus propios experimentos!</p>
-					-->
+
 					<br><br><br>
 					<div class="mt-6">
 						<a href="<?php echo base_url() ?>" class="btn btn-light rounded-md mr-2 mt-2 shadow-md"><i class="uil uil-backward "></i> Regresar</a>
 					</div>
 
 				</div>
-			</div><!--end col-->
+			</div>
 
 			<div class="lg:col-span-5 mt-8 md:mt-0">
 				<img class="rounded-lg" src="<?php  echo base_url() ?>assets/uploads/posts/<?php echo $post['image_url'] ?>" alt="">
-			</div><!--end col-->
-		</div><!--end grid-->
-	</div><!--end container-->
-</section><!--end section-->
+			</div>
+		</div>
+	</div>
+</section>
 <div class="relative">
 	<div class="shape overflow-hidden z-1 text-light-50">
 		<svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@
 		</svg>
 	</div>
 </div>
-<!-- End Hero -->
+ -->
 <section class="relative md:py-24 py-16">
 	<div class="container">
 		<div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
@@ -104,12 +104,16 @@
 
 			<div class="lg:col-span-4 md:col-span-6">
 				<div class="sticky top-20">
-					<h5 class="text-lg font-semibold bg-light-50 shadow rounded-md p-2 text-center">Author</h5>
+					<h5 class="text-lg font-semibold bg-light-50 shadow rounded-md p-2 text-center">Autor</h5>
 					<div class="text-center mt-8">
-						<img src="assets/images/client/05.jpg" class="h-24 w-24 mx-auto rounded-full shadow mb-4" alt="">
+						<img src="<?php echo base_url() ?>assets/uploads/users/<?php echo $post['profile_image'] ?>" class="h-24 w-24 mx-auto rounded-full shadow mb-4" alt="">
 
-						<a href="" class="text-lg font-semibold hover:text-primary-600 transition-all duration-500 ease-in-out">Cristina Romsey</a>
-						<p class="text-muted-400">Content Writer</p>
+						<a href="#" class="text-lg font-semibold hover:text-primary-600 transition-all duration-500 ease-in-out">
+							<?php echo $post['username']; ?>
+						</a>
+
+						<p class="text-muted-400">Creador de contenido</p>
+
 					</div>
 
 					<h5 class="text-lg font-semibold bg-light-50 shadow rounded-md p-2 text-center mt-8">Relacionados</h5>
@@ -162,3 +166,7 @@
 	</div><!--end container-->
 </section>
 
+<script>
+	var d =document.getElementById("topnav");
+	d.className += " nav-sticky";
+</script>
