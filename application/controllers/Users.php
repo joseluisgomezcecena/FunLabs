@@ -4,6 +4,12 @@ class Users extends CI_Controller{
 
 	public function register()
 	{
+
+		if($this->session->userdata('logged_in'))
+		{
+			redirect(base_url());
+		}
+
 		$data['title'] = 'Sign Up!';
 
 		$this->form_validation->set_rules('name', 'Name', 'required');

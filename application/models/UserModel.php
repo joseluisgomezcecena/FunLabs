@@ -14,6 +14,7 @@ class UserModel extends CI_Model{
 			'email'=>$this->input->post('email'),
 			'username'=>$this->input->post('username'),
 			'password'=>$encrypted_pwd,
+			'profile_image'=>'no-image.png',
 		);
 
 		return $this->db->insert('users', $data);

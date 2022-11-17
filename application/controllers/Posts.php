@@ -108,7 +108,7 @@ class Posts extends CI_Controller
 			if(!$this->upload->do_upload())
 			{
 				$errors = array('error'=>$this->upload->display_errors());
-				$post_image = 'noimage.jpg';
+				$post_image = 'no-image.png';
 			}
 			else
 			{

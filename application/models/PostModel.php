@@ -35,11 +35,12 @@ class PostModel extends  CI_Model{
 				posts.body,posts.steps,posts.image_url,
 				posts.status,posts.visibility,posts.category_id,
 				posts.created_at,posts.user_id,category.category_name,
-				category.created_at AS category_created_at'
+				category.created_at AS category_created_at, users.id AS userid, users.name, users.username',
 			);
 			$this->db->from ( 'posts' );
 			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );
-			$this->db->where('id', $id);
+			$this->db->join ('users', 'posts.user_id=users.id', 'left');
+			$this->db->where('posts.id', $id);
 			$query = $this->db->get();
 
 			return $query->row_array();
