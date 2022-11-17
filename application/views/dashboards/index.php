@@ -61,6 +61,12 @@
 </div>
 
 
+<!-- Breadcrumb -->
+<section class="breadcrumb lg:flex items-start">
+	<div>
+		<h1>Publicaciones pendientes de aprobación</h1>
+	</div>
+</section>
 
 
 <table id="myTable" class="table mt-7">
@@ -115,6 +121,10 @@
 
 						?>
 					</p>
+
+					<h6 class="uppercase mt-2">Usuario</h6>
+					<p class="text-primary font-bold"><?php echo $post['username'] ?></p>
+
 					<h6 class="uppercase mt-4 lg:mt-auto">Fecha de publicación:</h6>
 					<p><?php echo date_format(date_create($post['created_at']), "d/M/Y")  ?></p>
 				</div>

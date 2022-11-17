@@ -83,9 +83,9 @@ class Posts extends CI_Controller
 
 		//form validation
 		$this->form_validation->set_rules('title', 'Title', 'required');
-		$this->form_validation->set_rules('body', 'Body', 'required');
+		$this->form_validation->set_rules('body', 'Descripción del experimento', 'required');
 		$this->form_validation->set_rules('body', 'Pasos', 'required');
-		$this->form_validation->set_rules('category[]', 'Category', 'required');
+		$this->form_validation->set_rules('category[]', 'Categorias', 'required');
 
 
 		if($this->form_validation->run() === FALSE)
@@ -146,9 +146,9 @@ class Posts extends CI_Controller
 
 		//form validation
 		$this->form_validation->set_rules('title', 'Title', 'required');
-		$this->form_validation->set_rules('body', 'Body', 'required');
+		$this->form_validation->set_rules('body', 'Descripción del experimento', 'required');
 		$this->form_validation->set_rules('body', 'Pasos', 'required');
-		$this->form_validation->set_rules('category[]', 'Category', 'required');
+		$this->form_validation->set_rules('category[]', 'Categoria', 'required');
 
 		if($this->form_validation->run() === FALSE)
 		{
