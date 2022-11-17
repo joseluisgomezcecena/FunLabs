@@ -98,6 +98,33 @@
 <script src="<?php echo base_url() ?>assets/libs/feather-icons/feather.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/plugins.init.js"></script>
 <script src="<?php echo base_url() ?>assets/js/app.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+	$(document).ready( function () {
+		$('#myTable').DataTable({
+			"language": {
+				"lengthMenu": "Mostrar _MENU_ Publicaciones",
+				"zeroRecords": "No se encontraron publicaciones - 😢",
+				"info": "Showing page _PAGE_ of _PAGES_",
+				"infoEmpty": "No hay publicaciones disponibles",
+				"infoFiltered": "(filtrando de _MAX_ publicaciones totales)",
+				"search": "",
+				"infoThousands": ",",
+				"loadingRecords": "Cargando...",
+				"searchPlaceholder": "Busca Experimentos...🔍",
+				"paginate": {
+					"first": "Primero",
+					"last": "Último",
+					"next": "Siguiente",
+					"previous": "Anterior"
+				},
+			}
+		});
+	} );
+</script>
+
 <!-- JAVASCRIPTS -->
 </body>
 </html>

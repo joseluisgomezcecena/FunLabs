@@ -106,7 +106,7 @@
 					<table id="myTable" class="table">
 						<thead>
 						<tr>
-							<th scope="col"></th>
+							<th scope="col">Title</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -119,7 +119,6 @@
 								<!--
 								blog relative rounded-md shadow-sm border hover:shadow-xl overflow-hidden
 								-->
-								<a href="<?php echo base_url() ?>post/<?php echo $post['id'] ?>">
 								<div class="h-52 w-full blog relative rounded-lg shadow-sm border hover:shadow-xl  lg:flex md:flex">
 									<img class="object-cover w-full md:w-1/2 lg:w-1/3" src="<?php echo base_url() ?>assets/uploads/posts/<?php echo $post['image_url']; ?>" alt="image"/>
 
@@ -130,7 +129,6 @@
 										<p class="mb-2 text-sm leading-normal text-justify text-sky-900">
 											<?php echo substr($post['body'],"0", "100") . '...' ?>
 										</p>
-										<!--
 										<button
 												class="
         px-4
@@ -143,15 +141,47 @@
         hover:bg-sky-600 hover:text-sky-100">
 											Read more
 										</button>
--->
+
 
 
 
 									</div>
+									<div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
+										<div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Category </div>
+										<div class="flex items-center pt-2">
+											<div>
+												<p class="font-bold text-gray-900"><?php echo $post['category_name'] ?></p>
+											</div>
+										</div>
+									</div>
 								</div>
-								</a>
+
+								<!--
+						<div style="height: 520px;" class="blog relative rounded-md shadow-sm border hover:shadow-xl overflow-hidden">
+							<img style="min-height: 220px; max-height: 230px;" class="image mx-auto" src="<?php echo base_url() ?>assets/uploads/posts/<?php echo $post['image_url']; ?>" alt="">
+
+							<div style="height: 220px;" class="content p-6">
+								<a href="<?php echo base_url() ?>post/<?php echo $post['id'] ?>" class="title h5 text-lg font-medium hover:text-primary-600 transition duration-500"><?php echo $post['title'] ?></a>
+								<p class="text-muted-400 mt-3"><?php echo substr($post['body'],"0", "50") . '...' ?></p>
+
+								<div class="mt-4">
+									<a href="<?php echo base_url() ?>post/<?php echo $post['id'] ?>" class="btn btn-link font-normal hover:text-primary-600 after:bg-primary-600 transition duration-500">Read More <i class="uil uil-arrow-right"></i></a>
+								</div>
+							</div>
 
 
+							<div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
+								<div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Category </div>
+								<div class="flex items-center pt-2">
+									<div>
+										<p class="font-bold text-gray-900"><?php echo $post['category_name'] ?></p>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						-->
 							</td>
 						</tr>
 					<?php endforeach; ?>

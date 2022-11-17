@@ -22,6 +22,51 @@
 	<link rel="stylesheet" href="<?php  echo base_url() ?>assets/css/icons.css" />
 	<link rel="stylesheet" href="<?php  echo base_url() ?>assets/css/tailwind.css" />
 
+	<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+
+
+	<style>
+		th{
+			border: 0 !important;
+		}
+		tbody{
+			border: 0 !important;
+		}
+		table{
+			border: 0 !important;
+		}
+
+		input[type="search"] {
+			border: 1px solid #c9c9c9 !important;
+			background-color: white !important;
+			border-radius: 9999px !important;
+			box-shadow: 2px 2px 2px #a4a2a2 !important;
+			width: 100% !important;
+			height: 3rem;
+		}
+
+		.dataTables_wrapper .dataTables_length select {
+			background-color: white !important;
+			box-shadow: 1px 1px 1px #a4a2a2 !important;
+		}
+
+		table.dataTable thead>tr>th.sorting_asc:before,
+		table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:after
+		{
+			display: none !important;
+		}
+		table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after
+		{
+			display: none;
+		}
+		#myTable_length{
+			display: none;
+		}
+		.dataTables_wrapper .dataTables_filter{
+			width: 100%;
+		}
+	</style>
+
 </head>
 
 <body>
