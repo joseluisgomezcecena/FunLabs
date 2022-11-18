@@ -55,6 +55,21 @@ class PostModel extends  CI_Model{
 
 
 
+	public function get_posts_by_category($id)
+	{
+
+		$this->db->order_by('posts.id', 'DESC');
+		$this->db->join('category', 'category.category_id = posts.category_id');
+		$query = $this->db->get_where('posts', array('posts.category_id'=>$id));
+
+		#$last_query = $this->db->last_query();
+		//print_r($last_query);
+
+		return $query->result_array();
+
+	}
+
+
 
 
 	public function get_posts_pending($id=FALSE)
@@ -218,7 +233,7 @@ class PostModel extends  CI_Model{
 
 
 
-	public function get_posts_by_category($category_id, $limit)
+	public function get_posts_by_category_new($category_id, $limit)
 	{
 		if($limit == 0)
 		{

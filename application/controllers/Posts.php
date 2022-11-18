@@ -38,6 +38,18 @@ class Posts extends CI_Controller
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 	public function review($id = NULL)
 	{
 		$data['post'] = $this->PostModel->get_posts_logged($id);

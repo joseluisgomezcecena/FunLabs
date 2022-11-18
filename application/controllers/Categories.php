@@ -2,10 +2,14 @@
 
 class Categories extends CI_Controller
 {
+
+
 	public function get_categories()
 	{
 		$this->CategoryModel->get_posts();
 	}
+
+
 
 	public function index()
 	{

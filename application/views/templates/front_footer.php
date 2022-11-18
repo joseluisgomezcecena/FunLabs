@@ -127,9 +127,9 @@
 
 <!-- JAVASCRIPTS -->
 
-
+<?php if( isset($navbar) && $navbar==1): ?>
 <script>
-	/*
+
 	$(function() {
 		//caches a jQuery object containing the header element
 		var header = $(".clearHeader");
@@ -144,8 +144,9 @@
 		});
 	});
 
-	 */
+
 </script>
+<?php endif; ?>
 
 
 </body>

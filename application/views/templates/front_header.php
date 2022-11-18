@@ -106,8 +106,8 @@
 		<!-- Logo container-->
 		<a class="logo" href="<?php echo base_url() ?>">
                     <span class="logo-light-mode">
-						<span class="l-dark" style="color:rgb(79 70 229 / 0.9);"><i style="font-size: 36px; color: rgb(79 70 229 / 0.9);" class="uil-flask l-dark"></i>FunLab</span>
-						<span class="l-light" style="color:white;"><i style="font-size: 36px; color: white;" class="uil-flask l-light"></i>FunLab</span>
+						<span class="l-dark" style="color:rgb(79 70 229 / 0.9);"><i style="font-size: 36px; color: rgb(79 70 229 / 0.9);" class="uil-flask l-dark"></i>Ciencia Book</span>
+						<span class="l-light" style="color:white;"><i style="font-size: 36px; color: white;" class="uil-flask l-light"></i>Ciencia Book</span>
 						<!--
                         <img src="<?php  echo base_url() ?>assets//images/logo-dark.png" class="l-dark" height="24" alt="">
                         <img src="<?php  echo base_url() ?>assets//images/logo-light.png" class="l-light" height="24" alt="">
@@ -137,17 +137,38 @@
 
 		<!--Login button Start-->
 		<ul class="buy-button list-none mb-0">
+
+			<?php if($this->session->userdata('logged_in')): ?>
+
+
 			<li class="inline mb-0">
-				<a href="<?php echo base_url() ?>users/login">
-					<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Inicia Sesión</span></div>
+				<a href="<?php echo base_url() ?>users/dashboard">
+					<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Ingresar al panel de: <?php echo $this->session->userdata('user_name') ?></span></div>
 				</a>
 			</li>
 
 			<li class="inline pl-1 mb-0">
-				<a href="<?php echo base_url() ?>users/login" target="_blank">
-					<div class="login-btn-light"><span class="btn  btn-light">Inicia Sesión</span></div>
+				<a href="<?php echo base_url() ?>users/dashboard" target="_blank">
+					<div class="login-btn-light"><span class="btn  btn-light">Ingresar al panel de: <?php echo $this->session->userdata('user_name') ?></span></div>
 				</a>
 			</li>
+
+			<?php else: ?>
+
+				<li class="inline mb-0">
+					<a href="<?php echo base_url() ?>users/login">
+						<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Inicia Sesión</span></div>
+					</a>
+				</li>
+
+				<li class="inline pl-1 mb-0">
+					<a href="<?php echo base_url() ?>users/login" target="_blank">
+						<div class="login-btn-light"><span class="btn  btn-light">Inicia Sesión</span></div>
+					</a>
+				</li>
+
+
+			<?php endif; ?>
 		</ul>
 		<!--Login button End-->
 

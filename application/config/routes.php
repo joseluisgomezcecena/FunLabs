@@ -24,6 +24,7 @@ $route['posts'] = 'posts/index';
 //$route['posts'] = 'posts/main';
 $route['posts/read/(:any)'] = 'posts/read/$1';
 $route['post/(:any)'] = 'pages/post/$1'; //read single post
+$route['posts/category/(:any)'] = 'pages/category/$1';
 
 
 //category
