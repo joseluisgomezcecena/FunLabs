@@ -13,11 +13,11 @@
 			<img src="<?php echo base_url() ?>assets/uploads/posts/<?php echo $post['image_url'] ?>" alt="">
 
 			<div class="content p-6">
-				<a href="blog-detail.html" class="title h5 text-lg font-medium hover:text-primary-600 transition duration-500">Design your apps in your own way</a>
+				<a href="blog-detail.html" class="title h5 text-lg font-medium hover:text-primary-600 transition duration-500"><?php echo $post['title'] ?></a>
 				<p class="text-muted-400 mt-3"><?php echo substr($post['body'],"0", "200") . '...' ?></p>
 
 				<div class="mt-4">
-					<a href="blog-detail.html" class="btn btn-link font-normal hover:text-primary-600 after:bg-primary-600 transition duration-500">Read More <i class="uil uil-arrow-right"></i></a>
+					<a href="<?php echo base_url() ?>post/<?php echo $post['id'] ?>" class="btn btn-link font-normal hover:text-primary-600 after:bg-primary-600 transition duration-500">Leer Mas <i class="uil uil-arrow-right"></i></a>
 				</div>
 			</div>
 		</div><!--blog end-->

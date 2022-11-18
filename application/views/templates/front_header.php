@@ -238,7 +238,7 @@
 						<?php
 						foreach ($categories as $category):
 						?>
-						<li class="has-submenu parent-menu-item"><a href="#"> <?php echo $category['category_name'] ?> </a><span class="submenu-arrow"></span></li>
+						<li class="has-submenu parent-menu-item"><a href="<?php echo base_url() ?>posts/category/<?php echo $category['category_id'] ?>"> <?php echo $category['category_name'] ?> </a><span class="submenu-arrow"></span></li>
 						<?php endforeach; ?>
 
 						<!--

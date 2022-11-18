@@ -123,7 +123,7 @@
 							<img src="<?php echo base_url() ?>assets/uploads/posts/<?php echo $related['image_url'] ?>" class="h-16 rounded-md shadow" alt="">
 
 							<div class="ml-3">
-								<a href="<?php echo base_url() ?>posts/category/<?php echo $related['id']; ?>" class="font-semibold hover:text-primary-600"><?php echo $related['title'] ?></a>
+								<a href="<?php echo base_url() ?>post/<?php echo $related['id']; ?>" class="font-semibold hover:text-primary-600"><?php echo $related['title'] ?></a>
 							</div>
 						</div>
 					<?php endforeach; ?>

@@ -78,6 +78,7 @@ class Users extends CI_Controller{
 
 			if($user_id)
 			{
+				$user_info = $this->session->userdata('user_id');
 				//die("Success!");
 
 				//create session
@@ -85,6 +86,7 @@ class Users extends CI_Controller{
 					'user_id'=>$user_id,
 					'user_name'=>$username,
 					'logged_in'=>true,
+					'level'=>$user_info['level']
 				);
 
 				$this->session->set_userdata($user_data);
@@ -94,7 +96,7 @@ class Users extends CI_Controller{
 				$this->session->set_flashdata('login_success', 'Haz iniciado sesión.');
 
 
-				$user_info = $this->session->userdata('user_id');
+
 
 				if($user_info['level'] == 2){
 					redirect(base_url() . 'dashboard');

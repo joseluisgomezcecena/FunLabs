@@ -5,6 +5,9 @@ class Dashboards extends CI_Controller
 	//display all posts
 	public function index()
 	{
+
+		if($this->session->userdata(''))
+
 		$data['title'] = "Mi panel de control";
 
 		$data['posts'] = $this->PostModel->get_posts_pending();
