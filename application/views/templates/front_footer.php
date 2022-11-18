@@ -107,7 +107,7 @@
 			"language": {
 				"lengthMenu": "Mostrar _MENU_ Publicaciones",
 				"zeroRecords": "No se encontraron publicaciones - 😢",
-				"info": "Showing page _PAGE_ of _PAGES_",
+				"info": "Mostrando _PAGE_ de _PAGES_",
 				"infoEmpty": "No hay publicaciones disponibles",
 				"infoFiltered": "(filtrando de _MAX_ publicaciones totales)",
 				"search": "",
@@ -126,5 +126,27 @@
 </script>
 
 <!-- JAVASCRIPTS -->
+
+
+<script>
+	/*
+	$(function() {
+		//caches a jQuery object containing the header element
+		var header = $(".clearHeader");
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 500) {
+				header.removeClass('clearHeader').addClass("nav-sticky");
+			} else {
+				header.removeClass("darkHeader").addClass('nav-sticky');
+			}
+		});
+	});
+
+	 */
+</script>
+
+
 </body>
 </html>

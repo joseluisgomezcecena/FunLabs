@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="UTF-8" />
-	<title>FunLab - Experimentos y mas!</title>
+	<title>Ciencia Book - Experimentos y mas!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta content="Tailwind CSS Saas & Software Landing Page Template" name="description" />
 	<meta name="author" content="Shreethemes" />
@@ -24,6 +24,7 @@
 
 	<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
+	<script src="https://cdn.tailwindcss.com"></script>
 
 	<style>
 		th{
@@ -65,6 +66,24 @@
 		.dataTables_wrapper .dataTables_filter{
 			width: 100%;
 		}
+
+		.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+			background-color: #6922f6 !important;
+			border: 1px solid rgba(55, 8, 148, 0.91) !important;
+			color: #FFFFFF !important;
+			border-radius: 9999px !important;
+		}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			border: 1px solid rgba(55, 8, 148, 0.91) !important;
+			color: #6922f6 !important;
+			border-radius: 9999px !important;
+		}
+
+
+		.dataTables_scrollHeadInner, .table{
+			width:100%!important
+		}
+
 	</style>
 
 </head>
@@ -82,7 +101,7 @@
 <!-- Loader End -->
 
 <!-- Start Navbar -->
-<nav id="topnav" class="defaultscroll is-sticky">
+<nav id="topnav" class="defaultscroll is-sticky clearHeader">
 	<div class="container">
 		<!-- Logo container-->
 		<a class="logo" href="<?php echo base_url() ?>">
@@ -119,14 +138,14 @@
 		<!--Login button Start-->
 		<ul class="buy-button list-none mb-0">
 			<li class="inline mb-0">
-				<a href="#">
-					<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Login</span></div>
+				<a href="<?php echo base_url() ?>users/login">
+					<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Inicia Sesión</span></div>
 				</a>
 			</li>
 
 			<li class="inline pl-1 mb-0">
-				<a href="#" target="_blank">
-					<div class="login-btn-light"><span class="btn  btn-light">Login</span></div>
+				<a href="<?php echo base_url() ?>users/login" target="_blank">
+					<div class="login-btn-light"><span class="btn  btn-light">Inicia Sesión</span></div>
 				</a>
 			</li>
 		</ul>
