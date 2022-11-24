@@ -81,7 +81,7 @@
 
 <!-- Start Cookie Popup -->
 <div class="cookie-popup fixed max-w-lg bottom-3 right-3 left-3 sm:left-0 sm:right-0 mx-auto bg-white shadow rounded-md py-5 px-6 z-10">
-	<p class="text-muted-400">This website uses cookies to provide you with a great user experience. By using it, you accept our <a href="https://shreethemes.in" target="_blank" class="text-success-600 font-semibold">use of cookies</a></p>
+	<p class="text-muted-400">Este sitio web utiliza cookies para mejorar tu experiecncia al utilizar el sitio. Al utilizar el sitio aceptas el uso de nuestras cookies.</p>
 	<div class="cookie-popup-actions text-right">
 		<button class="absolute border-none bg-none p-0 cursor-pointer font-semibold top-2 right-2"><i class="uil uil-times text-dark text-2xl"></i></button>
 	</div>
