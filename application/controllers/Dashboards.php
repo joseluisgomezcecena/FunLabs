@@ -6,7 +6,10 @@ class Dashboards extends CI_Controller
 	public function index()
 	{
 
-		if($this->session->userdata(''))
+		if($this->session->userdata(''));
+		{
+			redirect(base_url());
+		}
 
 		$data['title'] = "Mi panel de control";
 
