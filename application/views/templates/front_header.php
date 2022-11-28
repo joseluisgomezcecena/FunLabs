@@ -4,10 +4,10 @@
 	<meta charset="UTF-8" />
 	<title>Ciencia Book - Experimentos y mas!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta content="Tailwind CSS Saas & Software Landing Page Template" name="description" />
-	<meta name="author" content="Shreethemes" />
-	<meta name="website" content="https://shreethemes.in" />
-	<meta name="email" content="support@shreethemes.in" />
+	<meta content="Ciencia book experimentos y mas, aprende de una manera divertida replicando nuestros experimentos." name="description" />
+	<meta name="author" content="nexussoftwaresolutions" />
+	<meta name="website" content="https://nexussoftwaresolutions.com" />
+	<meta name="email" content="support@nexussoftwaresolutions.com" />
 	<meta name="version" content="1.0.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -140,6 +140,7 @@
 
 			<?php if($this->session->userdata('logged_in')): ?>
 
+			<!--
 
 			<li class="inline mb-0">
 				<a href="<?php echo base_url() ?>users/dashboard">
@@ -152,9 +153,10 @@
 					<div class="login-btn-light"><span class="btn  btn-light">Ingresar al panel de: <?php echo $this->session->userdata('user_name') ?></span></div>
 				</a>
 			</li>
-
+			-->
 			<?php else: ?>
 
+			<!--
 				<li class="inline mb-0">
 					<a href="<?php echo base_url() ?>users/login">
 						<div class="login-btn-primary"><span class="btn   btn-primary btn-soft">Inicia Sesión</span></div>
@@ -167,7 +169,7 @@
 					</a>
 				</li>
 
-
+			-->
 			<?php endif; ?>
 		</ul>
 		<!--Login button End-->
@@ -379,6 +381,7 @@
 					</ul>
 				</li>
 				-->
+				<!--
 				<li class="has-submenu parent-menu-item">
 					<a href="javascript:void(0)">Sobre Nosotros</a><span class="menu-arrow"></span>
 					<ul class="submenu">
@@ -386,7 +389,7 @@
 						<li><a href="#" class="sub-menu-item">Politicas</a></li>
 					</ul>
 				</li>
-
+				-->
 				<li><a href="#" target="_blank" class="sub-menu-item">Tienda</a></li>
 			</ul><!--end navigation menu-->
 		</div><!--end navigation-->

@@ -25,13 +25,20 @@
 			<div class="lg:col-span-7">
 				<div class="md:mr-6 md:mb-20">
 					<h5 class="text-lg text-white/60">Crea y Aprende</h5>
-					<h4 class="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-white">FunLab <br> </h4>
-					<p class="text-white/60 text-lg max-w-xl">Con FunLab podras aprender de una forma divertida, replica nuestros experimentos o sube tus propios experimentos!</p>
+					<h4 class="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-white">Ciencia Book <br> </h4>
+					<p class="text-white/60 text-lg max-w-xl">Con Ciencia Book podras aprender de una forma divertida, replica nuestros experimentos o sube tus propios experimentos!</p>
 
-					<div class="mt-6">
-						<a href="<?php echo  base_url() ?>users/register" class="btn btn-danger rounded-md mr-2 mt-2"><i class="uil uil-book-reader"></i> Registrate!</a>
-						<a href="<?php echo base_url() ?>posts" class="btn btn-light rounded-md mr-2 mt-2"><i class="uil uil-flask"></i> Ver los experimentos</a>
-					</div>
+
+					<?php if($this->session->userdata('logged_in')): ?>
+						<div class="mt-6">
+							<a href="<?php echo  base_url() ?>dashboard" class="btn btn-danger rounded-md mr-2 mt-2"><i class="uil uil-user"></i> Mi Perfil</a>
+						</div>
+					<?php else: ?>
+						<div class="mt-6">
+							<a href="<?php echo  base_url() ?>users/register" class="btn btn-danger rounded-md mr-2 mt-2"><i class="uil uil-book-reader"></i> Registrate!</a>
+							<a href="<?php echo base_url() ?>users/login" class="btn btn-light rounded-md mr-2 mt-2"><i class="uil uil-flask"></i> Inicia Sesión</a>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div><!--end col-->
 

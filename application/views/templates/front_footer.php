@@ -8,7 +8,11 @@
 					<div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
 						<div class="lg:col-span-4 md:col-span-12">
 							<a href="#" class="logo-footer">
-								<img src="assets/images/logo-light.png" alt="">
+								<i style="font-size: 36px; color: rgb(79 70 229 / 0.9);" class="uil-flask l-dark"></i>
+								<!--
+								<img src="<?php echo base_url() ?>assets/images/logo-light.png" alt="">
+								-->
+								Ciencia Book.
 							</a>
 							<p class="mt-6 text-gray-300">Aprende de una manera divertida con FunLabs y conecta con nosotros mediante nuestras redes sociales.</p>
 							<ul class="list-none social-icon foot-social-icon mt-6">

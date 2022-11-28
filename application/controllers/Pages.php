@@ -14,6 +14,9 @@ class Pages extends CI_Controller
 		$data['categories'] = $this->CategoryModel->get_categories();
 
 
+		if($page == 'cookies'){
+			$data['navbar'] = 1;
+		}
 
 		//load header, page & footer
 		$this->load->view('templates/front_header', $data);
