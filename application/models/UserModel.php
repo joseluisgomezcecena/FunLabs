@@ -66,6 +66,21 @@ class UserModel extends CI_Model{
 	}
 
 
+
+	public function insert_key($user_id, $encrypted_key)
+	{
+		$data = array(
+			'email'=>$user_id,
+			'key'=>$encrypted_key,
+		);
+
+		return $this->db->update('users', $data, array('email'=>$user_id));
+	}
+
+
+
+
+
 	public function login($username, $password)
 	{
 		$this->db->where('username', $username);
@@ -89,6 +104,17 @@ class UserModel extends CI_Model{
 	{
 		$query = $this->db->get_where('users', array('id'=>$id));
 		return $query->row_array();
+	}
+
+
+	public function check_email($email){
+		$email = $this->input->post('email');
+		$query = $this->db->get_where('users', array('email'=>$email));
+		if(empty($query->row_array())){
+			return false;
+		}else{
+			return $query->row_array();
+		}
 	}
 
 

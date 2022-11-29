@@ -2,6 +2,63 @@
 class Accounts extends CI_Controller
 {
 
+	public function forgot()
+	{
+		$data['title'] = "Olviste tu contraseña?";
+
+		$this->form_validation->set_rules('email', 'Correo Electronico', 'required');
+
+		if($this->form_validation->run() === FALSE)
+		{
+			$this->load->view('templates/auth/header');
+			$this->load->view('users/forgot', $data); //loading page and data
+			$this->load->view('templates/auth/footer');
+		}
+		else
+		{
+			//get email
+			$email = $this->input->post('email');
+
+			//check if email exists
+			$user_id = $this->UserModel->check_email($email);
+
+			if($user_id) {
+				//generate random key
+				$key = md5(uniqid());
+
+				//encrypt key
+				$encrypted_pwd = password_hash($key, PASSWORD_DEFAULT);
+
+				//insert key into database
+				$this->UserModel->insert_key($user_id, $encrypted_pwd);
+
+				//send email with link
+				$this->load->library('email');
+				$subject = 'Recuperacion de contraseña';
+
+				$message = "<p>Para recuperar tu contraseña, haz click en el siguiente enlace: ". $key ."</p>";
+
+				$body = $message;
+
+				$result = $this->email
+					->from('soporte@cienciabook.com')
+					->reply_to('noreply@cienciabook.com')    // Optional, an account where a human being reads.
+					->to($email)
+					->subject($subject)
+					->message($body)
+					->send();
+
+				var_dump($result);
+				echo '<br />';
+				echo $this->email->print_debugger();
+
+				exit;
+
+			}
+		}
+	}
+
+
 	public function emailtest()
 	{
 		$this->load->library('email');
@@ -57,5 +114,7 @@ class Accounts extends CI_Controller
 
 		exit;
 	}
+
+
 
 }

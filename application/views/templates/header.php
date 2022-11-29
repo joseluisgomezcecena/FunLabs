@@ -8,6 +8,7 @@ else
 {
 	redirect(base_url() . 'users/login');
 }
+
 ?>
 <head>
 	<meta charset="UTF-8" />

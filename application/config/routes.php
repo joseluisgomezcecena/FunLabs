@@ -35,7 +35,7 @@ $route['categories'] = 'categories/index';
 $route['categories/posts/(:any)'] = 'categories/posts/$1';
 
 
-$route['forgot'] = 'accounts/forgot_password';
+$route['forgot'] = 'accounts/forgot';
 
 //users
 $route['users/register'] = 'users/register';

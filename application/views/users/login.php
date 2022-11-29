@@ -23,7 +23,7 @@
 					</label>
 				</div>
 				<div class="flex items-center">
-					<a href="<?php echo base_url() ?>users/forgot" class="text-sm uppercase">Olvidaste tu contraseña?</a>
+					<a href="<?php echo base_url() ?>forgot" class="text-sm uppercase">Olvidaste tu contraseña?</a>
 					<button type="submit" class="btn btn_primary ltr:ml-auto rtl:mr-auto uppercase">Iniciar Sesión</button>
 				</div>
 			</form>
