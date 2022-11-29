@@ -15,6 +15,12 @@ class CategoryModel extends  CI_Model
 	}
 
 
+	public function get_categories_active_number()
+	{
+		$query = $this->db->get('category');
+		return $query->num_rows();
+	}
+
 
 
 

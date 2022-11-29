@@ -3,6 +3,12 @@
 class Categories extends MY_Controller
 {
 
+	public function get_permissions(){
+		$user_info = $this->session->userdata('user_id');
+		if ($user_info['level'] < 2){
+			redirect(base_url() . 'posts');
+		}
+	}
 
 	public function get_categories()
 	{
@@ -13,6 +19,9 @@ class Categories extends MY_Controller
 
 	public function index()
 	{
+
+		$this->get_permissions();
+
 		$data['title'] = 'Categorias';
 
 		$data['categories'] = $this->CategoryModel->get_categories();
@@ -27,6 +36,8 @@ class Categories extends MY_Controller
 
 	public function create()
 	{
+		$this->get_permissions();
+
 		$data['title'] = "Crear Categorias";
 
 		$this->form_validation->set_rules('name', 'Name', 'required');
@@ -71,6 +82,8 @@ class Categories extends MY_Controller
 
 	public function edit($id)
 	{
+		$this->get_permissions();
+
 		$data['title'] = 'Editar Categoria';
 
 		$data['category'] = $this->CategoryModel->get_category($id);
@@ -136,6 +149,9 @@ class Categories extends MY_Controller
 
 	public function delete($id)
 	{
+
+		$this->get_permissions();
+
 		$data['title'] = 'Editar Categoria';
 
 		$data['category'] = $this->CategoryModel->get_category($id);

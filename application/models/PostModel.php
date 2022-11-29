@@ -7,9 +7,6 @@ class PostModel extends  CI_Model{
 	}
 
 
-
-
-
 	public function get_posts($id=FALSE)
 	{
 		if($id === FALSE)
@@ -115,6 +112,22 @@ class PostModel extends  CI_Model{
 
 
 
+	public function get_posts_pending_number(){
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('posts');
+		$this->db->where('visibility=', 0);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+
+	public function get_posts_active_number(){
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('posts');
+		$this->db->where('visibility=', 1);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 
 

@@ -21,6 +21,19 @@ class UserModel extends CI_Model{
 	}
 
 
+
+
+
+
+	public function get_users_active_number()
+	{
+		$query = $this->db->get('users');
+		return $query->num_rows();
+	}
+
+
+
+
 	public function edit_profile($post_image, $uploaded, $user_id, $encrypted_pwd)
 	{
 		$id = $user_id;

@@ -78,15 +78,16 @@ class Users extends CI_Controller{
 
 			if($user_id)
 			{
-				$user_info = $this->session->userdata('user_id');
+				//$user_info = $this->session->userdata('user_id');
 				//die("Success!");
+
 
 				//create session
 				$user_data = array(
 					'user_id'=>$user_id,
 					'user_name'=>$username,
 					'logged_in'=>true,
-					'level'=>$user_info['level']
+					//'level'=>$user_info['level']
 				);
 
 				$this->session->set_userdata($user_data);
@@ -97,12 +98,18 @@ class Users extends CI_Controller{
 
 
 
+				$user_info = $this->session->userdata('user_id');
 
-				if($user_info['level'] == 2){
+
+				if($user_info['level'] == 2)
+				{
 					redirect(base_url() . 'dashboard');
-				}else{
+				}
+				else
+				{
 					redirect(base_url() . 'posts');
 				}
+
 			}
 			else
 			{

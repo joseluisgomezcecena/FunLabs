@@ -30,7 +30,11 @@
 			<div>
 				<span class="text-primary text-5xl leading-none la la-sun"></span>
 				<p class="mt-2">Publicaciones Activas</p>
-				<div class="text-primary mt-5 text-3xl leading-none">18</div>
+				<div class="text-primary mt-5 text-3xl leading-none">
+
+					<?php echo $posts_active_number['total']; ?>
+
+				</div>
 			</div>
 		</div>
 		<div
@@ -38,7 +42,9 @@
 			<div>
 				<span class="text-primary text-5xl leading-none la la-cloud"></span>
 				<p class="mt-2">Pendientes De Aprobación</p>
-				<div class="text-primary mt-5 text-3xl leading-none">16</div>
+				<div class="text-primary mt-5 text-3xl leading-none">
+					<?php echo $posts_pending_number['total']; ?>
+				</div>
 			</div>
 		</div>
 		<div
@@ -46,7 +52,9 @@
 			<div>
 				<span class="text-primary text-5xl leading-none la la-layer-group"></span>
 				<p class="mt-2">Categorias</p>
-				<div class="text-primary mt-5 text-3xl leading-none">9</div>
+				<div class="text-primary mt-5 text-3xl leading-none">
+					<?php echo $categories_active_number ?>
+				</div>
 			</div>
 		</div>
 		<div
@@ -54,7 +62,9 @@
 			<div>
 				<span class="text-primary text-5xl leading-none la la-users"></span>
 				<p class="mt-2">Usuarios Registrados</p>
-				<div class="text-primary mt-5 text-3xl leading-none">9</div>
+				<div class="text-primary mt-5 text-3xl leading-none">
+					<?php echo $users_number ?>
+				</div>
 			</div>
 		</div>
 	</div>

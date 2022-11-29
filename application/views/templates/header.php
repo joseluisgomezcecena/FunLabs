@@ -269,10 +269,13 @@ else
 			</a>
 			<hr class="mx-8 my-4">
 		</div>
+		<?php if($user_info['level']==2): ?>
+
 		<a href="<?php echo base_url() ?>dashboard" class="link" data-toggle="tooltip-menu" data-tippy-content="Dashboard">
 			<span class="icon la la-laptop"></span>
 			<span class="title">Mi Panel</span>
 		</a>
+		<?php endif; ?>
 
 		<a href="#no-link" class="link" data-target="[data-menu=pages]" data-toggle="tooltip-menu"
 		   data-tippy-content="Pages">
@@ -281,11 +284,13 @@ else
 		</a>
 
 
+		<?php if($user_info['level']==2): ?>
 		<a href="#no-link" class="link" data-target="[data-menu=menu]" data-toggle="tooltip-menu"
 		   data-tippy-content="Menu">
 			<span class="icon la la-sitemap"></span>
 			<span class="title">Configuración</span>
 		</a>
+		<?php endif; ?>
 
 
 

@@ -1,11 +1,9 @@
 <!-- Footer -->
 <footer class="mt-auto">
 	<div class="footer">
-		<span class='uppercase'>&copy; 2022-<?php echo date("Y") ?> Nexus Software Solutions.</span>
+		<span class='uppercase'>&copy; 2022-<?php echo date("Y") ?> Ciencia Book.</span>
 		<nav>
-			<a href="#">Soporte</a>
-			<span class="divider">|</span>
-			<a href="#" target="_blank">Politica de privacidad</a>
+			<a href="<?php echo base_url() ?>cookies">Cookies</a>
 		</nav>
 	</div>
 </footer>
