@@ -1,6 +1,6 @@
 <?php
 
-class Dashboards extends CI_Controller
+class Dashboards extends MY_Controller
 {
 	//display all posts
 	public function index()

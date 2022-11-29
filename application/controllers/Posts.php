@@ -1,6 +1,6 @@
 <?php
 
-class Posts extends CI_Controller
+class Posts extends MY_Controller
 {
 	//display all posts
 	public function index()
