@@ -14,7 +14,7 @@
 								-->
 								Ciencia Book.
 							</a>
-							<p class="mt-6 text-gray-300">Aprende de una manera divertida con FunLabs y conecta con nosotros mediante nuestras redes sociales.</p>
+							<p class="mt-6 text-gray-300">Aprende de una manera divertida con Ciencia Book y conecta con nosotros mediante nuestras redes sociales.</p>
 							<ul class="list-none social-icon foot-social-icon mt-6">
 								<li class="inline"><a href="" class="btn btn-icon btn-sm border icon-border rounded-md hover:border-primary-600 hover:bg-primary-600"><i data-feather="facebook" class="h-4 w-4"></i></a></li>
 								<li class="inline"><a href="" class="btn btn-icon btn-sm border icon-border rounded-md hover:border-primary-600 hover:bg-primary-600"><i data-feather="instagram" class="h-4 w-4"></i></a></li>
@@ -23,7 +23,7 @@
 							</ul><!--end icon-->
 						</div><!--end col-->
 
-						<div class="lg:col-span-2 md:col-span-4">
+						<div class="lg:col-span-4 md:col-span-4">
 							<h5 class="footer-head">Experimentos</h5>
 							<ul class="list-none footer-list mt-6">
 								<?php foreach ($categories as $category): ?>
@@ -32,14 +32,14 @@
 							</ul>
 						</div><!--end col-->
 
-						<div class="lg:col-span-3 md:col-span-4">
-							<h5 class="footer-head">FunLabs</h5>
+						<div class="lg:col-span-4 md:col-span-4">
+							<h5 class="footer-head">Ciencia Book</h5>
 							<ul class="list-none footer-list mt-6">
-								<li><a href="#" class="text-gray-300 hover:text-gray-400"><i class="uil uil-angle-right-b me-1"></i> Politicas</a></li>
-								<li><a href="#" class="text-gray-300 hover:text-gray-400"><i class="uil uil-angle-right-b me-1"></i> Cookies</a></li>
+								<li><a href="<?php echo base_url() ?>cookies" class="text-gray-300 hover:text-gray-400"><i class="uil uil-angle-right-b me-1"></i> Cookies</a></li>
 							</ul>
 						</div><!--end col-->
 
+						<!--
 						<div class="lg:col-span-3 md:col-span-4">
 							<h5 class="footer-head">Newsletter</h5>
 							<p class="mt-6">Recibe las ultimas noticias, inscribete a nuestro newsletter.</p>
@@ -56,7 +56,10 @@
 									<button type="submit" id="submitsubscribe" name="send" class="btn btn-primary rounded-md">Subscribir</button>
 								</div>
 							</form>
-						</div><!--end col-->
+						</div>
+						-->
+						<!--end col-->
+
 					</div><!--end grid-->
 				</div><!--end col-->
 			</div>
@@ -67,7 +70,7 @@
 		<div class="container text-center">
 			<div class="grid md:grid-cols-2 items-center">
 				<div class="md:text-left text-center">
-					<p class="mb-0">© <script>document.write(new Date().getFullYear())</script> FunLabs. </p>
+					<p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Ciencia Book. </p>
 				</div>
 
 				<ul class="list-none md:text-right text-center mt-6 md:mt-0">

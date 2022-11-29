@@ -1,7 +1,7 @@
 <div class="container flex items-center justify-center  py-10">
 	<div class="w-full md:w-1/2 xl:w-1/3">
 		<div class="mx-5 md:mx-10">
-			<h2 class="uppercase">Bienvenido a FunLabs!</h2>
+			<h2 class="uppercase">Bienvenido a Ciencia Book!</h2>
 			<h4 class="uppercase">Ingresa aqui</h4>
 		</div>
 		<div class="card mt-5 p-5 md:p-10">
