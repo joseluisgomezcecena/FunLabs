@@ -61,17 +61,17 @@
 					<h6 class="uppercase">Status</h6>
 					<p>
 						<?php
-						if($post['status'] == 1)
+						if($post['visibility'] == 1)
 						{
-							echo "Publicado";
+							echo "Aprobado";
 						}
-						elseif ($post['status'] == 0)
+						elseif ($post['visibility'] == 0)
 						{
-							echo "No Publicado";
+							echo "En Espera";
 						}
 						elseif ($post['status'] == 2)
 						{
-							echo "Borrador";
+							echo "Rechaazado";
 						}
 						else
 						{
