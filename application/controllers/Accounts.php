@@ -72,6 +72,14 @@ class Accounts extends CI_Controller
 
 
 
+			}else{
+				//session message
+				$this->session->set_flashdata(
+					'error',
+					'No hay una cuenta con ese correo electronico.'
+				);
+
+				redirect(base_url() . 'forgot');
 			}
 		}
 	}
