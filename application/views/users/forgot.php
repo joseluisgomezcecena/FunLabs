@@ -48,5 +48,7 @@
 
 			</form>
 		</div>
+
+		<br><a href="<?php echo base_url() ?>"> 🔙 Volver al inicio</a>
 	</div>
 </div>

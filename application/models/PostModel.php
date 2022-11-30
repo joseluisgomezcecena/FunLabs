@@ -24,6 +24,7 @@ class PostModel extends  CI_Model{
 			$this->db->from ( 'posts' );
 			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );
 			$this->db->join ('users', 'posts.user_id=users.id', 'left');
+			$this->db->where('posts.visibility', 1);
 			$query = $this->db->get();
 			return $query->result_array();
 		}
@@ -41,6 +42,7 @@ class PostModel extends  CI_Model{
 			$this->db->join ( 'category', 'category.category_id = posts.category_id' , 'left' );
 			$this->db->join ('users', 'posts.user_id=users.id', 'left');
 			$this->db->where('posts.id', $id);
+			$this->db->where('posts.visibility', 1);
 			$query = $this->db->get();
 
 			return $query->row_array();
