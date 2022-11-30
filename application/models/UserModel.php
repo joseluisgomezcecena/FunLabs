@@ -70,11 +70,11 @@ class UserModel extends CI_Model{
 	public function insert_key($user_id, $encrypted_key)
 	{
 		$data = array(
-			'email'=>$user_id,
-			'key'=>$encrypted_key,
+			'password'=>$encrypted_key,
 		);
+		$email = $user_id['email'];
 
-		return $this->db->update('users', $data, array('email'=>$user_id));
+		return $this->db->update('users', $data, array('email'=>$email));
 	}
 
 

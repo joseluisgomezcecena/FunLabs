@@ -62,6 +62,11 @@ class Posts extends MY_Controller
 
 		$data['title'] = $data['post']['title'];
 
+		//validation style
+		$this->form_validation->set_error_delimiters(
+			'<div class="alert alert_danger mb-5"><strong class="uppercase">Error: </strong>',
+			'<button type="button" class="dismiss la la-times" data-dismiss="alert"></button></div>'
+		);
 
 		$this->form_validation->set_rules('review', 'Aceptar o Rechazar', 'required');
 

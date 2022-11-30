@@ -8,6 +8,12 @@ class Accounts extends CI_Controller
 
 		$this->form_validation->set_rules('email', 'Correo Electronico', 'required');
 
+		//validation style
+		$this->form_validation->set_error_delimiters(
+			'<div class="alert alert_danger mb-5"><strong class="uppercase">Error: </strong>',
+			'<button type="button" class="dismiss la la-times" data-dismiss="alert"></button></div>'
+		);
+
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->load->view('templates/auth/header');
@@ -19,6 +25,9 @@ class Accounts extends CI_Controller
 			//get email
 			$email = $this->input->post('email');
 
+			//echo $email;
+
+			//exit();
 			//check if email exists
 			$user_id = $this->UserModel->check_email($email);
 
@@ -52,7 +61,16 @@ class Accounts extends CI_Controller
 				echo '<br />';
 				echo $this->email->print_debugger();
 
+
+				//session message
+				$this->session->set_flashdata(
+					'sent',
+					'Se ha enviado un correo con tu nueva contraseña.'
+				);
+
 				exit;
+
+
 
 			}
 		}

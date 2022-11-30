@@ -6,10 +6,10 @@
 		</div>
 		<div class="card mt-5 p-5 md:p-10">
 
-			<?php echo form_open('users/login') ?>
+			<?php echo form_open(base_url() . 'forgot') ?>
 				<div class="mb-5">
 					<label class="label block mb-2" for="email">Tu Correo Electronico</label>
-					<input id="email" type="text" name="username" class="form-control" placeholder="example@example.com">
+					<input id="email" type="email" name="email" class="form-control" placeholder="example@example.com">
 				</div>
 
 				<div class="flex items-center">
